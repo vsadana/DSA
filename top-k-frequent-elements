@@ -1,0 +1,30 @@
+https://leetcode.com/problems/top-k-frequent-elements/
+
+class Solution {
+    func topKFrequent(_ nums: [Int], _ k: Int) -> [Int] {
+        var dict = [Int: Int]()
+        var a = [Int]()
+
+//count elements in dict
+        for i in nums {
+            let count = 1
+            if let val = dict[i] {
+                dict[i]  = val + 1
+            } else {
+                dict[i] = count
+            }
+        }
+
+// sort dict  
+        let dict1 = dict.sorted(by: {
+            $0.value > $1.value
+        })
+// fetch k elements 
+        for (key,_) in dict1 {
+            if a.count <  k {
+                a.append(key)
+            }
+        }
+        return a
+    }
+}
