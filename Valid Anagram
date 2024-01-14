@@ -1,0 +1,17 @@
+https://leetcode.com/problems/valid-anagram/description/
+
+class Solution {
+    func isAnagram(_ s: String, _ t: String) -> Bool {
+    var sDict = [Int:Int]()
+    var tDict = [Int:Int]()
+    let sArray = Array(s)
+    let tArray = Array(t)
+
+    if s.count != t.count {return false}
+    for i in 0..<sArray.count {
+        sDict[Int(sArray[i].asciiValue!)] = 1 + sDict[Int(sArray[i].asciiValue!),default: 0]
+        tDict[Int(tArray[i].asciiValue!)] = 1 + tDict[Int(tArray[i].asciiValue!),default: 0]
+    }
+        return sDict == tDict
+    }
+}
