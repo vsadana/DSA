@@ -1,0 +1,19 @@
+Link: https://leetcode.com/problems/search-insert-position/
+class Solution {
+func searchInsert(_ nums: [Int], _ target: Int) -> Int {
+      for (i,n) in nums.enumerated(){
+          if n == target {
+              return i
+          } else {
+              if target < n {
+                  return i
+              } else if nums[i] > target && nums[i-1] < target {
+                  return i
+              } else if n < target && (i == (nums.count - 1)) {
+                  return i + 1
+              }
+          }
+      }
+      return 0
+  }
+}
