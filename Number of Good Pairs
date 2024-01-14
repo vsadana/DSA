@@ -1,0 +1,30 @@
+Number of Good Pairs : https://leetcode.com/problems/number-of-good-pairs
+
+class Solution {
+    func numIdenticalPairs(_ nums: [Int]) -> Int {
+    var dict = [Int: Int]()
+    var count = 0
+    var final = 0
+    for i in nums {
+        let count = 1
+        if let val = dict[i] {
+            dict[i]  = val + 1
+        } else {
+            dict[i] = count
+        }
+    }
+    
+    let values = Array(dict.values)
+
+    for i in values {
+        if i > 1 {
+            count = 0
+            for val in stride(from: i-1, to: 0, by: -1) {
+                count += val
+            }
+            final += count
+        }
+    }
+    return final
+    }
+}
