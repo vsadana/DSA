@@ -1,0 +1,11 @@
+class Solution {
+    func buildArray(_ nums: [Int]) -> [Int] {
+        var arr = [Int]()
+        for (i,j) in nums.enumerated() {
+            arr.append(nums[nums[i]])
+        }
+
+        return arr
+        
+    }
+}
