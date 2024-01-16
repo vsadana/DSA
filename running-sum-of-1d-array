@@ -1,0 +1,16 @@
+https://leetcode.com/problems/running-sum-of-1d-array/
+
+class Solution {
+    func runningSum(_ nums: [Int]) -> [Int]{
+    var arr = [nums[0]]
+    
+    for i in 1 ..< nums.count {
+        var count  = 0
+        for j in stride(from: i, to: -1, by: -1) {
+            count  += nums[j]
+        }
+        arr.append(count)
+    }
+    return arr
+}
+}
