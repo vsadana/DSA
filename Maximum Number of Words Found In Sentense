@@ -1,0 +1,12 @@
+class Solution {
+    func mostWordsFound(_ sentences: [String]) -> Int {
+    var max = 0
+        sentences.forEach({
+            let compo = $0.components(separatedBy: " ")
+            if compo.count > max {
+                max = compo.count
+            }
+        })
+    return max
+    }
+}
