@@ -1,0 +1,29 @@
+class Solution {
+   
+    var countOnes = 0
+    var countNum = 0
+    func divide(num : Int){
+        var abc = num
+        var mod : Int?
+        if abc > 0 {
+            mod = 0
+            mod = num % 2
+            abc  = abc / 2
+            divide(num:abc)
+        }
+        if  mod == 1 {
+            countOnes += 1
+        }
+    }
+
+     func sumIndicesWithKSetBits(_ nums: [Int], _ k: Int) ->Int {
+        for (i,j) in nums.enumerated() {
+            countOnes = 0
+            divide(num: i)
+            if countOnes == k {
+                countNum += j
+            }
+        }
+        return countNum
+    }
+ }
