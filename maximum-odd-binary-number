@@ -1,0 +1,23 @@
+https://leetcode.com/problems/maximum-odd-binary-number/
+class Solution {
+func maximumOddBinaryNumber(_ s: String) -> String{
+    var onesCount = s.filter({
+        $0 == "1"
+    }).count
+    var newStr = ""
+    var new1tr = ""
+    if onesCount > 0 {
+        newStr.append("1")
+        onesCount -= 1
+    }
+    for i in 0 ..< s.count - 1 {
+        if onesCount > 0 {
+            onesCount -= 1
+            new1tr.append("1")
+        } else {
+            new1tr.append("0")
+        }
+    }
+    return new1tr + newStr
+}
+}
