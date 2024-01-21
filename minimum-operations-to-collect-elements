@@ -1,0 +1,22 @@
+https://leetcode.com/problems/minimum-operations-to-collect-elements/
+class Solution {
+    var count = 0
+    var numCOunt = 0
+    var dict = [Int:Int]()
+    func minOperations(_ nums: [Int], _ k: Int) -> Int{
+        var arr = nums
+        if arr.count > 0 {
+            if  arr.last ?? 0 <= k  && dict[arr.last ?? 0] == nil {
+                count += 1
+                dict[arr.last ?? 0] = 1
+                numCOunt += 1
+            } else if numCOunt < k {
+                count += 1
+            }
+            
+            arr.removeLast()
+            minOperations(arr,k)
+        }
+        return count
+    }
+}
