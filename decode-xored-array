@@ -1,0 +1,12 @@
+https://leetcode.com/problems/decode-xored-array/
+class Solution {
+    func decode(_ encoded: [Int], _ first: Int) -> [Int] {
+    var arr = [first]
+    var prev = first
+    for num in encoded {
+        prev ^= num
+        arr.append(prev)
+    }
+    return arr
+  }
+}
