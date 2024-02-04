@@ -1,0 +1,24 @@
+class Solution {
+    func leftRightDifference(_ nums: [Int]) -> [Int]{
+    var leftArr = [0]
+    var rightArr = [0]
+    var finalArr = [Int]()
+    var sum = 0
+    for (i,j) in nums.enumerated() {
+        sum = sum  + j
+        if leftArr.count < nums.count {
+            leftArr.append(sum)
+        }
+    }
+    sum = 0
+    for i in stride(from: nums.count - 1, to: 0, by: -1) {
+        sum = sum  + nums[i]
+        rightArr.insert(sum, at: 0)
+    }
+
+    for (i,j) in leftArr.enumerated() {
+        finalArr.append(abs(leftArr[i] - rightArr[i]))
+    }
+    return finalArr
+}
+}
