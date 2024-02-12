@@ -1,0 +1,19 @@
+# maximum sum of a subarray of size k
+func subArray(arr: [Int], range : Int) -> Int{
+    var sum = 0
+    for i in 0 ..< range {
+        sum += arr[i]
+    }
+    
+    var newMax = sum
+    for i in stride(from: range, to: arr.count, by: 1){
+        newMax += arr[i] - arr[i-range]
+        print(newMax)
+        if newMax > sum {
+            sum = newMax
+        }
+    }
+    return sum
+}
+//[2,3,5,2,9,]
+subArray(arr: [1, 4, 2, 10, 2, 3, 1, 0, 20], range: 4)
