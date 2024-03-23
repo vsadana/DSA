@@ -10,3 +10,26 @@ class Solution {
    }
 }
 
+
+// solution 2
+
+class ABC {
+    var targetArr = [Int]()
+    func createTargetArray2(_ nums: [Int], _ index: [Int])  {
+        targetArr = Array(repeating: 0, count: nums.count)
+        for i in 0 ..< nums.count {
+            shift(num: nums[i], index: index[i],count: targetArr.count)
+        }
+    }
+
+    func shift( num : Int, index : Int,count : Int) {
+        var i = count - 1
+        while i > index {
+            targetArr[i] = targetArr[i-1]
+            i -= 1
+        }
+        targetArr[index] = num
+    }
+}
+let obj = ABC()
+obj.createTargetArray2([0,1,2,3,4], [0,1,2,2,1])
