@@ -1,0 +1,10 @@
+//minimum-number-game
+class Solution {
+    func numberGame(_ nums: [Int]) -> [Int] {
+    var arr = nums.sorted()
+    for i in stride(from: 0, to: nums.count, by: 2) {
+        arr.swapAt(i, i + 1)
+    }
+    return arr
+    }
+}
