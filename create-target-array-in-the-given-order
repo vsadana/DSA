@@ -1,0 +1,12 @@
+//Create Target Array in the Given Order
+
+class Solution {
+  func createTargetArray(_ nums: [Int], _ index: [Int])-> [Int] {
+       var targetArr = [Int]()
+       for (key,val) in nums.enumerated(){
+           targetArr.insert(nums[key], at: index[key])
+       }
+    return targetArr
+   }
+}
+
