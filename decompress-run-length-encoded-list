@@ -1,0 +1,13 @@
+//decompress-run-length-encoded-list
+class Solution {
+    func decompressRLElist(_ nums: [Int])-> [Int]{
+        var arr = [Int]()
+    for i in stride(from: 0, to: nums.count, by: 2) {
+        for val in 0 ..< nums[i] {
+            arr.append(nums[i+1])
+        }
+    }
+    
+return arr
+}
+}
