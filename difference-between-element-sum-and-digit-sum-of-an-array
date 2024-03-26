@@ -1,0 +1,30 @@
+//difference-between-element-sum-and-digit-sum-of-an-array
+class Solution {
+    var summm = 0
+    func differenceOfSum(_ nums: [Int]) -> Int {
+        let sum = nums.reduce(0, {
+            return $0 + $1
+        })
+        var sum1 = 0
+        nums.forEach { val in
+            if val > 9 {
+                summm = 0
+                sum1 += calcSum(val)
+            } else {
+                sum1 += val
+            }
+        }
+        return sum - sum1
+    }
+    
+    func calcSum(_ num : Int) -> Int{
+        
+        let mod = num % 10
+        let deiv = num / 10
+        summm += mod
+        if num > 0  {
+            calcSum(deiv)
+        }
+        return summm
+    }
+}
