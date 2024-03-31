@@ -1,0 +1,10 @@
+class Solution {
+    func fizzBuzz(_ n: Int) -> [String] {
+        var arr = [String]()
+        for i in 1 ... n {
+            i % 3  == 0 && i % 5  == 0 ?  arr.append("FizzBuzz") :  i % 3 == 0 ? arr.append("Fizz") : i % 5 == 0 ?  arr.append("Buzz") : arr.append(String(i))
+           
+        }
+        return arr
+    }
+}
