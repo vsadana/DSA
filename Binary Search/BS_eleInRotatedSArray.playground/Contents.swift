@@ -3,11 +3,11 @@ import UIKit
 var greeting = "Hello, playground"
 
 let arr = [8,9,10,1,2,3,4,6,7]
-/// 1. fine the smallest number index in an array, so that index number will be the number of rotation
-/// 2. find prev and next number of mid
-/// 3. if mid is less than both prev and next then that index will be the count of number of rotation
-/// 4. divide the array and check the sorted portion and unsorted portion and move towards unsorted array
-/// if start less than mid then left portion is sorted else right is sorted
+/// 1. find the min mid of the element
+/// 2. then divide the array into 2 parts so that both the parts should be sorted
+/// 3. apply BS in both the aprts and find the element
+/// 4. any of the part wil return the element and rest will return -1
+/// 5. return that part
 func findNumberOfrotation(arr: [Int], _ num : Int) -> Int {
     var start = 0
     var end = arr.count - 1
