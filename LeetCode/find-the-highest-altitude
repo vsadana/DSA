@@ -1,0 +1,14 @@
+//https://leetcode.com/problems/find-the-highest-altitude/
+class Solution {
+    func largestAltitude(_ gain: [Int]) -> Int {
+    var max = 0
+    var sum = 0
+        for i in gain {
+            sum =  sum + i
+            if sum > max {
+                max = sum
+            }
+        }
+        return max
+    }
+}
