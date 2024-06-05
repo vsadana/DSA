@@ -1,0 +1,24 @@
+//https://leetcode.com/problems/maximum-product-difference-between-two-pairs/
+class Solution {
+func maxProductDifference(_ nums: [Int]) -> Int {
+    var max = 0
+    var min = Int.max
+    var secMax = 0
+    var secMin = Int.max
+    for i in nums {
+        if i > max {
+            secMax = max
+            max = i
+        } else if  i > secMax {
+            secMax = i
+        }
+        if i < min {
+            secMin = min
+            min = i
+        } else if i < secMin {
+            secMin = i
+        }
+    }
+    return ((max * secMax) - (min * secMin))
+}
+}
