@@ -1,0 +1,11 @@
+//https://leetcode.com/problems/check-if-a-string-is-an-acronym-of-words/
+class Solution {
+func isAcronym(_ words: [String], _ s: String) -> Bool {
+      var str = ""
+      for i in words {
+          let char : Character = i.first!
+          str += String(char)
+      }
+      return str == s
+  }
+}
