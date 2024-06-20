@@ -1,0 +1,20 @@
+func evenSort(arr: inout [Int]) -> [Int]{
+    var left = 0
+    var right = arr.count - 1
+    
+    while left < right {
+        if arr[left] % 2 != 0 { left += 1 }
+        if arr[right] % 2 != 0 { right -= 1 }
+        
+        if arr[left] % 2 == 0 && arr[right] % 2 == 0 {
+            arr.swapAt(left, right)
+            left += 1
+            right -= 1
+        }
+    }
+    
+    return arr
+}
+
+var ar  = [2,4,6,8]
+evenSort(arr: &ar)
