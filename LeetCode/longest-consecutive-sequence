@@ -1,0 +1,16 @@
+//https://leetcode.com/problems/longest-consecutive-sequence/
+func longestConsecutive(_ nums: [Int]) -> Int {
+    let set : Set<Int> = Set(nums)
+    var start = 0
+    for i in nums {
+         // check if start of seq
+        if !set.contains(i - 1) {
+           var length = 0
+            while set.contains(i + length)  {
+                length += 1
+            }
+            start = max(length, start)
+        }
+    }
+    return start
+}
