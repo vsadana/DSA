@@ -1,0 +1,15 @@
+//https://leetcode.com/problems/matrix-diagonal-sum/
+class Solution {
+func diagonalSum(_ mat: [[Int]]) -> Int {
+    var sum = 0
+    var mid = 0
+    if mat.count % 2 != 0 {
+        mid = mat[mat.count / 2][mat.count / 2]
+    }
+    for (i,j) in mat.enumerated() {
+        
+        sum +=  mat[i][i] + mat[i][mat.count-i-1]
+    }
+    return sum - mid
+}
+}
